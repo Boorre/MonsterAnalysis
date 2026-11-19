@@ -3,9 +3,11 @@ import numpy as np
 import streamlit as st
 import plotly.express as px
 from plotly.subplots import make_subplots
+from pathlib import Path
 
-emb = pd.read_excel('pages/Caso_Analista_Base_Datos_1.xlsx', 'Embarques')
-ventas = pd.read_excel('pages/Caso_Analista_Base_Datos_1.xlsx', 'Marca')
+BASE_DIR = Path(__file__).parent
+emb = pd.read_excel(BASE_DIR / 'Caso_Analista_Base_Datos_1.xlsx', 'Embarques')
+ventas = pd.read_excel(BASE_DIR / 'Caso_Analista_Base_Datos_1.xlsx', 'Marca')
 
 emb_fil = emb
 emb_fil['Embarques Unidades (000)'] = emb_fil['Embarques (cajas 000)'] * 24
