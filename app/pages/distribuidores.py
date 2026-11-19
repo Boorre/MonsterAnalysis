@@ -4,8 +4,8 @@ import streamlit as st
 import plotly.express as px
 from plotly.subplots import make_subplots
 
-emb = pd.read_excel('Caso_Analista_Base_Datos_1.xlsx', 'Embarques')
-ventas = pd.read_excel('Caso_Analista_Base_Datos_1.xlsx', 'Marca')
+emb = pd.read_excel('pages/Caso_Analista_Base_Datos_1.xlsx', 'Embarques')
+ventas = pd.read_excel('pages/Caso_Analista_Base_Datos_1.xlsx', 'Marca')
 
 emb_fil = emb
 emb_fil['Embarques Unidades (000)'] = emb_fil['Embarques (cajas 000)'] * 24

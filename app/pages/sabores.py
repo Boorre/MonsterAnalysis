@@ -12,7 +12,7 @@ def color_sign(v):
         return "color: #d62839"   # red
     return ""
 
-sabores = pd.read_excel('Caso_Analista_Base_Datos_1.xlsx', 'Sabores Monster')
+sabores = pd.read_excel('pages/Caso_Analista_Base_Datos_1.xlsx', 'Sabores Monster')
 sabores_y = sabores
 
 sabores_y['Year'] = np.where(sabores['Periodo'] <= '2025-09-01', '2025', '2026') #Add column tagging accordingly 2025 or 2026

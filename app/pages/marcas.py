@@ -5,7 +5,7 @@ import plotly.express as px
 
 #st.set_page_config(layout="wide")
 
-marcas = pd.read_excel('Caso_Analista_Base_Datos_1.xlsx', 'Marca')
+marcas = pd.read_excel('pages/Caso_Analista_Base_Datos_1.xlsx', 'Marca')
 
 marcas['Year'] = np.where(marcas['Periodo'] <= '2025-09-01', 2025, 2026) #Add column tagging accordingly 2025 or 2026
 marcas_ventas = marcas.groupby(['Marca', 'Year']).agg({
