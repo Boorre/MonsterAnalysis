@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.express as px
+from pathlib import Path
 
 def color_sign(v):
     if pd.isna(v):
@@ -12,7 +13,9 @@ def color_sign(v):
         return "color: #d62839"   # red
     return ""
 
-sabores = pd.read_excel('pages/Caso_Analista_Base_Datos_1.xlsx', 'Sabores Monster')
+
+BASE_DIR = Path(__file__).parent
+sabores = pd.read_excel(BASE_DIR / 'Caso_Analista_Base_Datos_1.xlsx', 'Sabores Monster')
 sabores_y = sabores
 
 sabores_y['Year'] = np.where(sabores['Periodo'] <= '2025-09-01', '2025', '2026') #Add column tagging accordingly 2025 or 2026
